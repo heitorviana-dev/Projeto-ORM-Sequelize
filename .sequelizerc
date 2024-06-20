@@ -1,0 +1,10 @@
+// Esse arquivo passa ao sequelize-cli onde estão os nossos arquivos, já que alteramos os lugares deles.
+const { resolve } = require('path');
+
+module.exports = {
+    'config': resolve(__dirname, 'src', 'config', 'config.json'),
+    'models-path': resolve(__dirname, 'src', 'models'),
+    'seeders-path': resolve(__dirname, 'src', 'seeders'),
+    'migrations-path': resolve(__dirname, 'src', 'migrations')
+};
+
