@@ -13,9 +13,7 @@ class App{
 
   routes(){
     this.app.get('/teste', (req, res) => {
-      res
-        .status(200)
-        .send({ mensagem: 'boas-vindas à API' });
+      res.status(200).send({ mensagem: 'boas-vindas à API' });
     });
 
   }
