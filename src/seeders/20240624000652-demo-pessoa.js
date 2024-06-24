@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('pessoas', [
+    await queryInterface.bulkInsert('pessoas', [ // O método bulkInsert adiciona várias linhas à tabela.
       {
         nome: 'Solange Estudante',
         email: 'solange@email.com',
@@ -60,6 +60,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('pessoas', null, {});
+    await queryInterface.bulkDelete('pessoas', null, {}); // O método bulkInDelete remove várias linhas da tabela.
   }
 };
