@@ -60,6 +60,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('pessoas', null, {}); // O método bulkInDelete remove várias linhas da tabela.
+    await queryInterface.bulkDelete('pessoas', null, {}); // O método bulkDelete remove várias linhas da tabela.
   }
 };

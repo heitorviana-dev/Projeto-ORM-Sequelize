@@ -1,4 +1,6 @@
 import express from 'express';
+import pessoasRoutes from './routes/pessoasRoutes';
+import cursosRoutes from './routes/cursosRoutes';
 
 class App{
   constructor(){
@@ -12,10 +14,8 @@ class App{
   }
 
   routes(){
-    this.app.get('/teste', (req, res) => {
-      res.status(200).send({ mensagem: 'boas-vindas à API' });
-    });
-
+    this.app.use(pessoasRoutes);
+    this.app.use(cursosRoutes);
   }
 }
 
