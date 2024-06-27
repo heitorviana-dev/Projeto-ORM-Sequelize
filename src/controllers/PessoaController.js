@@ -1,10 +1,9 @@
-const { Pessoa } = require('../models');
-// const { Pessoa } = database;
+const PessoaService = require('../services/PessoaService');
 
 class PessoaController{
-  static async getAll(req, res){
+  static async get(req, res){
     try {
-        const listaDePessoas = await Pessoa.findAll();
+        const listaDePessoas = await PessoaService.getAll();
         res.status(200).json(listaDePessoas);
     } catch(e){
         // Tratamento de erro
@@ -13,4 +12,4 @@ class PessoaController{
   }
 }
 
-export default PessoaController;
+module.exports = PessoaController;
