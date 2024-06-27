@@ -1,6 +1,5 @@
 import express from 'express';
 import pessoasRoutes from './routes/pessoasRoutes';
-import cursosRoutes from './routes/cursosRoutes';
 
 class App{
   constructor(){
@@ -15,7 +14,6 @@ class App{
 
   routes(){
     this.app.use(pessoasRoutes);
-    this.app.use(cursosRoutes);
   }
 }
 

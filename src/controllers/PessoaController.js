@@ -1,16 +1,12 @@
-const { Pessoa } = require('../models');
-// const { Pessoa } = database;
+const Controller = require('./Controller.js');
+const PessoaServices = require('../services/PessoaServices.js');
 
-class PessoaController{
-  static async getAll(req, res){
-    try {
-        const listaDePessoas = await Pessoa.findAll();
-        res.status(200).json(listaDePessoas);
-    } catch(e){
-        // Tratamento de erro
-        res.status(500).json({error: e});
-    }
+const pessoaServices = new PessoaServices();
+
+class PessoaController extends Controller{
+  constructor(){
+    super(pessoaServices);
   }
 }
 
-export default PessoaController;
+module.exports = new PessoaController();
