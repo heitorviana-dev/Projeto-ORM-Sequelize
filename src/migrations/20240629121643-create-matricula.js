@@ -16,6 +16,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      estudante_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'pessoas', key: 'id' }
+      },
+      curso_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'cursos', key: 'id' }
+      },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
