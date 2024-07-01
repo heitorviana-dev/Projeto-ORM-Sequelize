@@ -18,12 +18,12 @@ module.exports = {
       data_inicio: {
         type: Sequelize.DATEONLY
       },
-      docente_id: {
+      docente_id: { // Foreign Key
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'pessoas', key: 'id' }
       },
-      categoria_id: {
+      categoria_id: { // Foreign Key
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'categorias', key: 'id' }
