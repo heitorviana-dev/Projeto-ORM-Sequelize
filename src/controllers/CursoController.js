@@ -21,6 +21,21 @@ class CursoController{
       res.status(500).json({mensagem: 'Erro no servidor'});
     }
   }
+
+  static async updateCursos(req, res){
+    try {
+      if(req.params.id){
+        const cursosAtualizados = await CursoServices.updateCursos(req.params.id, req.body);
+        if(cursosAtualizados[0] === 0){
+          return res.status(400).json({mensagem: 'Erro ao atualizar o curso.'});
+        }
+        return res.status(201).json({mensagem: 'Atualização feita com sucesso.'});
+      }
+      return res.status(404).json({mensagem: 'O curso a ser atualizado não existe'});
+    } catch(error){
+      res.status(500).json(error);
+    }
+  }
 }
 
 module.exports = CursoController;

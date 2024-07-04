@@ -5,5 +5,6 @@ const router = new Router();
 
 router.get('/cursos', CursoController.getCursos);
 router.post('/cursos/create', CursoController.createCursos);
+router.put('/cursos/update/:id', CursoController.updateCursos);
 
 module.exports = router;
