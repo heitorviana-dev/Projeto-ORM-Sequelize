@@ -9,6 +9,15 @@ class CursoServices{
       return error;
     }
   }
+
+  static async createCursos(body){
+    try {
+      await Curso.create(body);
+      return true;
+    } catch(error){
+      return false;
+    }
+  }
 }
 
 module.exports = CursoServices;
