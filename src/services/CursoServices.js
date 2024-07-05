@@ -27,6 +27,15 @@ class CursoServices{
       return error;
     }
   }
+
+  static async deleteCursos(id){
+    try { 
+      const listaDeDeletados = await Curso.destroy({ where: { id } });
+      return listaDeDeletados;
+    } catch(error){
+      return error;
+    }
+  }
 }
 
 module.exports = CursoServices;
