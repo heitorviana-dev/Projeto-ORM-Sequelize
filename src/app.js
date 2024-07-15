@@ -2,6 +2,7 @@ import express from 'express';
 import pessoasRoutes from './routes/pessoasRoutes';
 import cursoRoutes from './routes/cursosRoutes';
 import matriculaRoutes from './routes/matriculasRoutes';
+import categoriasRoutes from './routes/categoriasRoutes';
 
 class App{
   constructor(){
@@ -19,6 +20,7 @@ class App{
     this.app.use(pessoasRoutes);
     this.app.use(cursoRoutes);
     this.app.use(matriculaRoutes);
+    this.app.use(categoriasRoutes);
   }
 }
 
